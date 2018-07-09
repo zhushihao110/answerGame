@@ -1,0 +1,796 @@
+<style lang="less">
+  page{
+    text-align: center;
+    margin: 0 auto;
+    background-color: #6848a6;
+  }
+  /*顶部  */
+  .top{
+    width: 100%;
+    position: relative;
+  }
+  .top .picBg{
+    display: block;
+    width: 100%;
+    height: 100rpx;
+  }
+  .top .picMusic{
+    display: block;
+    width: 72rpx;
+    height: 72rpx;
+    position: absolute;
+    top: 10rpx;
+    right: 25rpx;
+  }
+  .top .topScore{
+    position: absolute;
+    top: 90rpx;
+    left: 25rpx;
+    font-size: 36rpx;
+    color: white;
+    opacity: .5;
+  }
+  /*----------核心答题部分---------------  */
+  .container{
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+    position: relative;
+    height: 880rpx;
+    margin-top: 30rpx;
+    border-radius: 40rpx;
+  }
+  .container .top{
+    width: 100%;
+    position: absolute;
+    top: -47px;
+  }
+  .container .top .canvasBox{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 50%;
+    top: 5px;
+    margin-left: -30px;
+    z-index: 1000;
+  }
+  .container .top .canvasBox .canvas{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0);
+  }
+  .container .top image{
+    display: block;
+    width: 139px;
+    height: 70px;
+    margin: 0 auto;
+  }
+  .container .top .yuan{
+    position: absolute;
+    width: 57px;
+    height: 57px;
+    top: 6.2px;
+    left: 50%;
+    margin-left: -28.5px;
+  }
+  .container .top .timer{
+    position: absolute;
+    width: 57px;
+    height: 57px;
+    top: 6.2px;
+    left: 50%;
+    color: white;
+    text-align: center;
+    line-height: 57px;
+    margin-left: -28.5px;
+  }
+  .container .questionNum{
+    position: relative;
+    top: 44rpx;
+    z-index: 5;
+    font-size: 42rpx;
+    color: #f48932;
+  }
+  .container .shadleBox{
+    position: absolute;
+    top: 110rpx;
+    background-color: white;
+    text-align: center;
+    width: 100%;
+    height: 700rpx;
+    z-index: 10;
+  }
+  .container .questionItem{
+    position: absolute;
+    top: 70rpx;
+    color: #626262;
+    padding-top: 40rpx;
+    text-align: center;
+    width: 100%;
+  }
+  .container .questionItem .question{
+    font-size: 40rpx;
+    padding: 0 40rpx;
+    padding-bottom: 30rpx;
+    font-size: 30rpx;
+    font-weight: bold;
+  //   opacity: 0;
+  }
+  .container .questionItem .questionImage{
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 10rpx;
+  }
+  .container .questionItem .questionImage image{
+    display: block;
+    width: 100%;
+    height: 280rpx;
+  }
+  .container .questionItem .questionList{
+    width: 100%;
+    margin-top: 15rpx;
+  }
+  /* ----------------------------给每个答案设置----------------------------  */
+  .container .questionItem .questionList view{
+    width: 80%;
+    margin: 0 auto;
+    border: 2rpx solid #626262;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-radius: 50rpx;
+    margin-bottom: 20rpx;
+    position: relative;
+    font-weight: bold;
+    font-size: 36rpx;
+    padding: 0 20rpx;
+
+  }
+  .container .questionItem .questionList view .icon{
+    width: 46rpx;
+    height: 46rpx;
+    position: absolute;
+    top: 30rpx;
+    right: 0rpx;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+  }
+  .container .questionItem .questionList view .icon image{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  /* -------------------------------底部 ------------------------------- */
+  .footer{
+    width: 100%;
+    text-align: center;
+    margin-top: 45rpx;
+    margin-bottom: 20rpx;
+  }
+  .footer .rule{
+    width: 100%;
+    margin-top: 50rpx;
+  }
+  .footer .rule image{
+    display: block;
+    width: 120rpx;
+    height: 120rpx;
+    margin: 0 auto;
+  }
+  .footer .explain{
+    position: relative;
+    margin-top: 5%;
+    text-align: center;
+    font-size: 30rpx;
+    color: white;
+    opacity: 0.5;
+    height: 50rpx;
+    line-height: 50rpx;
+  }
+  .footer .explain .kefu{
+    background-color: transparent;
+    position: fixed;
+    bottom: 30rpx;
+    right: 10rpx;
+    font-size: 26rpx;
+  }
+  .footer .explain .kefu image{
+    position: absolute;
+    top: 10rpx;
+    left: 0;
+    width: 40rpx;
+    height: 40rpx;
+  }
+  .footer .explain .kefu text{
+    color: #4e367c;
+    padding-left: 20rpx;
+  }
+  /* -----------------------------------遮罩层--------------------------------------  */
+  .shadeBox{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, .5)
+  }
+  .shadeBox .contentBox{
+    position: absolute;
+    width: 580rpx;
+    height: 440rpx;
+    background-color: white;
+    border-radius: 30rpx;
+    top: 30%;
+    left: 50%;
+    margin-left: -290rpx;;
+  }
+  .shadeBox .contentBox .score{
+    position: relative;
+    width: 580rpx;
+    height: 370rpx;
+    margin: 0 auto;
+    text-align: center;
+    color: #493a26;
+    box-sizing: border-box;
+    padding-top: 100rpx;
+  :nth-child(1){
+    font-size: 42rpx;
+    font-weight: bold;
+  }
+  :nth-child(2){
+    font-size: 30rpx;
+  }
+  //   :nth-child(3){
+       //     font-size: 20rpx;
+       //     opacity: .5;
+       //   }
+  }
+  .shadeBox .contentBox .title{
+    font-size: 36rpx;
+    color: white;
+    width: 580rpx;
+    height: 70rpx;
+    text-align: center;
+    background-color: #00cc66;
+    font-weight: bold;
+    line-height: 70rpx;
+    border-top-left-radius: 30rpx;
+    border-top-right-radius: 30rpx;
+  }
+  .shadeBox .contentBox .noshare{
+    position: absolute;
+    bottom: 25rpx;
+    left: 38rpx;
+    width: 240rpx;
+    height: 64rpx;
+    background-color: #ff9933;
+    line-height: 64rpx;
+    color: white;
+    border-radius: 40rpx;
+    font-weight: bold;
+    font-size: 28rpx;
+  }
+  .shadeBox .contentBox .restMsg{
+    position: absolute;
+    bottom: 25rpx;
+    left: 50%;
+    margin-left: -120rpx;
+  }
+  .shadeBox .contentBox .share{
+    position: absolute;
+    bottom: 25rpx;
+    right: 38rpx;
+    background-color: #39a448;
+    width: 240rpx;
+    height: 64rpx;
+    line-height: 64rpx;
+    color: white;
+    border-radius: 40rpx;
+    font-weight: bold;
+    font-size: 28rpx;
+  }
+
+</style>
+<template>
+  <view class='page' style='width: {{dveWidth}}px; height: {{dveHeight}}px' wx:if="{{loading}}">
+    <!--顶部  -->
+    <view class='top'>
+      <image src='../image/pic_bg.png' class='picBg'></image>
+      <!--<image src='../image/pic_music.png' class='picMusic' bindtap='musiceClick' animation='{{animationData4}}'></image>-->
+      <audio  src="" id="myAudio"></audio>
+      <view class="topScore">得分: {{score}}</view>
+    </view>
+    <view class='container'>
+      <view class='top'>
+        <view class='canvasBox' wx:if='{{!boxSHow}}'>
+          <canvas canvas-id='canvas' class='canvas'></canvas>
+        </view>
+        <view class='timer'>{{timer}}</view>
+        <image src='../image/pic_cage_top.png'></image>
+        <image class='yuan' src='../image/pic_life.png'></image>
+      </view>
+      <view class='questionNum'><text>{{guan+1}}</text>/<text>{{count}}</text>: (分值{{arr[guan].score}})</view>
+      <view class='questionItem'>
+        <view class='question'><text>{{guan+1}}.</text><text>{{arr[guan].question}}</text></view>
+        <view class='questionImage' wx:if="{{arr[guan].image}}"><image src='../image/pic_cage_top.png'></image></view>
+        <view class='questionList' animation='{{opcaityShow}}'>
+          <!--后台数据原因，写法不好 答案内应包含参数有 是否正确，图标路径  -->
+          <view animation='{{animationClicka}}' wx:if= "{{arr[guan].options.A !== '/'}}" data-all="{{arr[guan]}}" style="background-color:{{bgCola}}" data-count='{{count}}' data-select="bgCola" data-item='{{arr[guan].options.A}}' @tap='click'>A.{{arr[guan].options.A}}
+            <view class='icon' wx:if="{{bgCola =='#e56673'}}"><image src='../image/pic_false.png'></image></view>
+            <view class='icon' wx:if="{{bgCola =='#22a587'}}"><image src='../image/pic_right.png'></image></view>
+          </view>
+          <view animation='{{animationClickb}}' wx:if= "{{arr[guan].options.B !== '/'}}" data-all="{{arr[guan]}}" style="background-color:{{bgColb}}" data-count='{{count}}' data-select="bgColb" data-item='{{arr[guan].options.B}}' @tap='click'>B.{{arr[guan].options.B}}
+            <view class='icon' wx:if="{{bgColb =='#22a587'}}"><image src='../image/pic_right.png'></image></view>
+            <view class='icon' wx:if="{{bgColb =='#e56673'}}"><image src='../image/pic_false.png'></image></view>
+          </view>
+          <view animation='{{animationClickc}}' wx:if= "{{arr[guan].options.C !== '/'}}" data-all="{{arr[guan]}}" style="background-color:{{bgColc}}" data-count='{{count}}' data-select="bgColc" data-item='{{arr[guan].options.C}}' @tap='click'>C.{{arr[guan].options.C}}
+            <view class='icon' wx:if="{{bgColc =='#22a587'}}"><image src='../image/pic_right.png'></image></view>
+            <view class='icon' wx:if="{{bgColc =='#e56673'}}"><image src='../image/pic_false.png'></image></view>
+          </view>
+          <view animation='{{animationClickd}}' wx:if= "{{arr[guan].options.D !== '/'}}" data-all="{{arr[guan]}}" style="background-color:{{bgCold}}" data-count='{{count}}' data-select="bgCold" data-item='{{arr[guan].options.D}}' @tap='click'>D.{{arr[guan].options.D}}
+            <view class='icon' wx:if="{{bgCold =='#22a587'}}"><image src='../image/pic_right.png'></image></view>
+            <view class='icon' wx:if="{{bgCold =='#e56673'}}"><image src='../image/pic_false.png'></image></view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class='shadleBox' animation='{{opcaity}}'></view> -->
+    </view>
+    <!--底部  -->
+    <view class='footer'>
+      <!-- <view class='rule'><image src='../image/pic_rule.png' bindtap='showRule'></image></view> -->
+      <view class='explain'>
+        <!-- <text>页面技术由 未来游戏 提供</text> -->
+        <button class='kefu' open-type="contact"><image src='../image/pic_kefu.png'></image><text>联系客服</text></button>
+      </view>
+    </view>
+    <!--弹出层  -->
+    <view class='shadeBox' wx:if="{{boxSHow}}">
+      <view class='contentBox' animation='{{animationData1}}'>
+        <view class='title'>提示</view>
+        <view class='score'>
+          <view>选错了</view>
+          <view>找群里面的朋友们帮忙复活吧！</view>
+          <!-- <view>（分享到微信群可以继续答题）</view> -->
+          <view bindtap='noShare' class='noshare'>取消</view>
+          <button open-type="share" class='share'>分享复活</button>
+        </view>
+      </view>
+    </view>
+    <!--弹出层  -->
+    <view class='shadeBox' wx:if="{{restMsSHow}}">
+      <view class='contentBox' animation='{{animationData1}}'>
+        <view class='title'>提示</view>
+        <view class='score'>
+          <view>{{restMsg}}</view>
+          <view bindtap='noShare' class='noshare restMsg'>确定</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  export default class Index extends wepy.page {
+    config = {
+      window: {
+        disableScroll: true
+      }
+    }
+    data = {
+      loading: false,
+      restMsSHow: false,
+      restMsg: null,
+      list: [],
+      guan: 0,
+      status: 1,
+      percent: 0,
+      cunzai: 0,
+      res: 0,
+      musice: null,
+      arr: [],
+      count: 0,
+      answer: '',
+      score: 0,
+      dveWidth: null,
+      dveHeight: null,
+      bgCol: '#ffffff',
+      falseClo: '#e56673',
+      rightCol: '#22a587',
+      clearTime: false,
+      clickItem: false,
+      bgCola: '#ffffff',
+      bgColb: '#ffffff',
+      bgColc: '#ffffff',
+      bgCold: '#ffffff',
+      boxSHow: false,
+      animationData1: null,
+      animationData4: null,
+      animationClick: null,
+      animationClicka: null,
+      animationClickb:null,
+      animationClickc:null,
+      animationClickd:null,
+      number: 0,
+      innerAudioContext: null,
+      opcaity: null,
+      opcaityShow: null,
+      timer: 10,
+      flag: false
+    }
+    methods = {
+      click(e) {
+        if(this.flag)return;
+        this.flag = true;
+        var that = this;
+        that.clickItem = true;
+        if (e.currentTarget.dataset.all.right == e.currentTarget.dataset.item) {
+          switch (e.currentTarget.dataset.select){
+            case'bgCola':
+              that.bgCola = that.rightCol
+              that.clickAnimation('bgCola', that.bgCola);
+              break;
+            case 'bgColb':
+              that.bgColb = that.rightCol
+              that.clickAnimation('bgColb', that.bgColb);
+              break;
+            case 'bgColc':
+              that.bgColc = that.rightCol
+              that.clickAnimation('bgColc', that.bgColc);
+              break;
+            case 'bgCold':
+              that.bgCold = that.rightCol
+              that.clickAnimation('bgCold', that.bgCold);
+              break;
+          }
+          that.score =Number(that.arr[that.guan].score) + parseInt(wx.getStorageSync('score'));
+          var rightNum = parseInt(wx.getStorageSync('guan')) + 1;
+          wx.setStorageSync('score', that.score);
+          wx.setStorageSync('guan', rightNum);
+          that.audioContext(true);
+          // ---判断是否是最后一题---
+          if (that.guan < e.currentTarget.dataset.count - 1) {
+            var percent = this.percent + 5
+            setTimeout(() => {
+              that.setTime(that);
+            }, 1000);
+          } else {
+            setTimeout (() =>{
+              wx.redirectTo({
+                url:'/pages/result'
+              });
+            },1000)
+          }
+        }else{
+          switch (e.currentTarget.dataset.select) {
+            case 'bgCola':
+              that.bgCola = that.falseClo
+              that.clickAnimation('bgCola', that.bgCola);
+              break;
+            case 'bgColb':
+              that.bgColb = that.falseClo
+              that.clickAnimation('bgColb', that.bgColb);
+              break;
+            case 'bgColc':
+              that.bgColc = that.falseClo
+              that.clickAnimation('bgColc', that.bgColc);
+              break;
+            case 'bgCold':
+              that.bgCold = that.falseClo
+              that.clickAnimation('bgCold', that.bgCold);
+              break;
+          }
+          that.audioContext(false);
+          setTimeout(()=>{
+            that.boxSHow = true;
+            that.$apply();
+          },700)
+          this.animationData1 = null
+          setTimeout(()=>{
+            this.animation = wx.createAnimation({
+              transformOrigin: "50% 50%",
+              duration: 200,
+              timingFunction: "ease",
+              delay: 0
+            });
+            this.animation.scale(1.1).step();
+            this.animation.scale(0.9).step();
+            this.animation.scale(1).step();
+            this.animationData1 = this.animation.export();
+            this.$apply();
+          },800)
+        }
+      },
+      noShare() {
+        this.restMsSHow = false;
+        wx.redirectTo({
+          url:'/pages/result'
+        });
+      }
+    }
+// -----------------初始化状态---------------------------------------------
+    onLoad() {
+      wx.showLoading({
+        title: '正在加载'
+      });
+      var that = this;
+      this.score = 0;
+      this.baseURL = this.$parent.globalData.baseURL;
+      this. headerClient = "2500" + '/miniapp/wechat/1.0.0/' + "1";
+      this.musice = wx.getStorageSync('musice');
+      var res = wx.getSystemInfoSync();
+      that.dveWidth = res.windowWidth;
+      that.dveHeight = res.windowHeight;
+      wx.setStorageSync('score', 0);
+      wx.setStorageSync('guan', 0);
+      this.accessToken = that.$parent.globalData.accessToken;
+      that.guan = 0;
+      that.bgCola = '#ffffff';
+      that.bgColb = '#ffffff';
+      that.bgColc = '#ffffff';
+      that.bgCold = '#ffffff';
+      that.getList();
+//      that.musiceRotate(!this.musice);
+      this.innerAudioContext = wx.createAudioContext('myAudio');
+      wepy.request({
+        header: {'Client': this. headerClient},
+        url: this.baseURL + '/activity/user/start?access_token='+ this.accessToken,
+        data: {
+          act_id: 1
+        }
+      });
+    }
+    onUnload() {
+      var that = this;
+      this.boxSHow = false;
+      that.setTime(that, true);
+//    that.musiceRotate(true);
+      wx.setStorageSync('musice',!this.musice);
+      this.animationClicka = null;
+      this.animationClickb = null;
+      this.animationClickc = null;
+      this.animationClickd = null;
+    }
+    onShow() {
+//      this.boxSHow = false;
+      this.flag = false;
+    }
+//  ---------------------------------封装---------------------------------------------
+    setTime(that,close) {
+      if(close){
+        clearInterval(that.cutDownTimer);
+        return;
+      }
+      let cutTime = that.arr[that.guan].limit_time*1000/50;
+      let cutDownTime = that.arr[that.guan].limit_time*1000/50;
+      that.timer = that.arr[that.guan].limit_time;
+      let canvasCtx = wx.createCanvasContext('canvas');
+      that.cutDownTimer = setInterval(function () {
+        let time = cutDownTime;
+        time--;
+        cutDownTime = time;
+        if(time*50%1000 === 0 ){
+          that.timer--;
+          that.setData({
+            [that.$prefix + 'timer']: that.timer
+          })
+        }
+        if (cutDownTime < cutTime) {
+          canvasCtx.setLineWidth(12);
+          canvasCtx.setStrokeStyle('#ffffff');
+          canvasCtx.beginPath();
+          canvasCtx.arc(
+            30,
+            30,
+            60 / 2 * 0.8,
+            -Math.PI * 0.5,
+            Math.PI * 2 * ((cutTime - cutDownTime) / cutTime) - Math.PI * 0.5,
+            false
+          );
+          canvasCtx.stroke();
+          canvasCtx.draw();
+        }
+// -------------------------------判断点击事件发生-----------------------------------------
+        if(that.clickItem){
+          that.clickItem = false;
+          clearInterval(that.cutDownTimer);
+          setTimeout(()=>{
+            if(that.guan<that.count-1 && !that.boxSHow){
+              setTimeout(() => {
+                that.guan = that.guan+1;
+                that.status = 1;
+                that.width = 0;
+                that.height = 0;
+                that.bgCola = '#ffffff';
+                that.bgColb = '#ffffff';
+                that.bgColc = '#ffffff';
+                that.bgCold = '#ffffff';
+                that.flag = false;
+                that.$apply();
+              }, 500);
+            }
+          },700)
+        }
+// -----------------------------答题时间已过-------------------------------------------------
+        if (time <= 0) {
+          clearInterval(that.cutDownTimer);
+          that.boxSHow = true;
+          that.$apply();
+          // -----------跳到下一题或者直接到结束页面------------------------------
+          // wx.redirectTo({
+          //         url:'/pages/result'
+          //     });
+          // if(that.guan<that.count-1){
+          //     that.guan = that.guan+1;
+          //     that.status = 1;
+          //     that.width = 0;
+          //     that.height = 0;
+          //     that.bgCola = '#ffffff';
+          //     that.bgColb = '#ffffff';
+          //     that.bgColc = '#ffffff';
+          //     that.bgCold = '#ffffff';
+          //     that.$apply();
+          //     that.setTime(that);
+          // }else{
+          //     wx.redirectTo({
+          //         url:'/pages/result'
+          //     });
+          // }
+        }
+      }, 50)
+    }
+//  ----------------------------播放背景音乐---------------------------------
+    musiceClick() {
+      this.musice = !this.musice;
+      if (this.musice){
+        let date = new Date();
+//          wx.playBackgroundAudio({
+//            dataUrl: 'https://heji.g2u7.cn/thinkphp/bgm_a.mp3?date'
+//          });
+//          this.musiceRotate();
+      }else{
+//          wx.pauseBackgroundAudio();
+//          this.musiceRotate(true);
+      }
+    }
+// -----------------------------背景音乐旋转动画----------------------
+    musiceRotate(state) {
+      if(state){
+        clearInterval(this.setIntervalMusice);
+        return;
+      }
+      var that = this;
+      this.setIntervalMusice = setInterval(()=>{
+        this.setData({
+          animationData4: null
+        });
+        this.animation = wx.createAnimation({
+          transformOrigin: "50% 50%",
+          duration: 300,
+          timingFunction: "line",
+          delay: 0
+        });
+        that.number++;
+        this.animation.rotate(5*(that.number)).step();
+        this.animationData4 = this.animation.export();
+        this.$apply();
+      },100)
+    }
+//  ----------------------------答题提示音---------------------------------------------
+    audioContext(state) {
+      if(state){
+        this.innerAudioContext.setSrc('https://heji.g2u7.cn/thinkphp/wright.mp3');
+      }else{
+        this.innerAudioContext.setSrc('https://heji.g2u7.cn/thinkphp/fause.mp3');
+      }
+      this.innerAudioContext.play();
+    }
+// -----------------------------点击答案动画---------------------------
+    clickAnimation(item,color) {
+      var that = this;
+      this.animationClicka = null;
+      this.animationClickb = null;
+      this.animationClickc = null;
+      this.animationClickd = null;
+      this.animation = wx.createAnimation({
+        transformOrigin: "50% 50%",
+        duration: 100,
+        timingFunction: "linear",
+        delay: 0
+      });
+      this.animation.backgroundColor(color).step();
+      this.animation.scale(.8).step();
+      this.animation.scale(1.1).step();
+      this.animation.scale(1).step();
+      switch(item){
+        case 'bgCola':
+          this.animationClicka = this.animation.export()
+          this.animationClicka.t = +new Date()
+          break;
+        case 'bgColb':
+          this.animationClickb = this.animation.export()
+          this.animationClickb.t = +new Date()
+          break;
+        case 'bgColc':
+          this.animationClickc = this.animation.export()
+          this.animationClickc.t = +new Date()
+          break;
+        case 'bgCold':
+          this.animationClickd = this.animation.export()
+          this.animationClickd.t = +new Date()
+          break;
+      }
+      that.$apply();
+    }
+// -----------------------------分享--------------------------------------------
+    onShareAppMessage(res) {
+      var that = this;
+      return {
+        title: '我竟然没有看懂湖北的方言，谁懂快来帮帮我',
+        path: '/pages/index',
+        imageUrl: '../image/share_1024.jpg',
+        success: function(res) {
+          // 提示转发成功
+          wepy.request({
+            header: {'Client': that.headerClient},
+            url: that.baseURL + '/activity/user/share-reset?access_token='+ that.accessToken,
+            data: {
+              act_id: 1
+            }
+          }).then((res) => {
+            if(res.data.code === -1){
+              that.restMsg = res.data.msg;
+              that.restMsSHow = true;
+              that.$apply();
+            }else{
+              // 分享后重置定时器和答案背景，隐藏提示框
+              wx.showToast({
+                title: '成功',
+                icon: 'success',
+                duration: 500
+              })
+              that.setTime(that);
+              that.boxSHow = false;
+              that.bgCola = '#ffffff';
+              that.bgColb = '#ffffff';
+              that.bgColc = '#ffffff';
+              that.bgCold = '#ffffff';
+              that.flag = false;
+              that.$apply();
+            }
+          });
+        },
+        fail: function(res) {
+          // 转发失败直接跳转结算页面
+          wx.redirectTo({
+            url:'/pages/result'
+          });
+        }
+      }
+    }
+
+
+    getList() {
+      wepy.request({
+        header: {'Client': this. headerClient},
+        url: this.baseURL+ '/activity/user/get-question-list?access_token='+ this.accessToken,
+        data: {
+          act_id: 1
+        }
+      }).then((res) => {
+        var that = this;
+        if (res.data.count) {
+          this.cunzai = 1
+        }
+        this.arr = res.data.res;
+        console.log(res.data);
+        this.count = res.data.count;
+        this.setTime(that);
+        this.loading = true;
+        wx.hideLoading();
+        this.$apply();
+      });
+    }
+  }
+</script>

@@ -1,0 +1,577 @@
+<style lang='less'>
+page{
+    background-color: #6848a6;
+    .box{
+        position: relative;
+        width: 670rpx;
+        height: 774rpx;
+        background-color: #b8a0f0;
+        margin: 0 auto;
+        margin-top: 20%;
+        .topImage{
+            width: 606rpx;
+            height: 82rpx;
+            margin: 0 auto;
+            padding-top: 28rpx;
+            image{
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .paomadeng{
+            position: absolute;
+            top: 113rpx;
+            left: 5rpx;
+            width: 660rpx;
+            height: 660rpx;
+            background-size: cover;
+        }
+        .blackBox{
+            width: 612rpx;
+            height: 612rpx;
+            border: 1rpx solid black;
+            margin: 0 auto;
+            margin-top: 26rpx;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 20rpx;
+            .item{
+                width: 192rpx;
+                height: 192rpx;
+                border-radius: 15rpx;
+                text-align: center;
+                line-height: 192rpx;
+                background-size: 192rpx 192rpx;
+                background-image: url('http://cdnimg.bigernews.com/group6/M00/69/AB/CgoFCFr8K4CAF6vqAAAVwaLmyy4076.png');
+                position: relative;
+                image{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+                .text{
+                    position: absolute;
+                    bottom: 15rpx;
+                    width: 100%;
+                    height: 44rpx;
+                    font-size: 28rpx;
+                    background-color: #6848a6;
+                    border: none;
+                    border-radius: 0;
+                    line-height: 44rpx;
+                }
+            }
+            .leight{
+                background-size: 192rpx 192rpx;
+                background-image: url('http://cdnimg.bigernews.com/group6/M00/69/A3/CgoFCFr8K2uAR5-oAAAbnWYTWpE808.png');
+            }
+        }
+        .footer{
+            width: 100%;
+            text-align: center;
+            margin-top:40rpx;
+            .changes{
+                font-size: 26rpx;
+                color:white;
+                view:first-child{
+                    text{
+                        color: #f18c00;
+                    }
+                }
+                button{
+                    width: 220rpx;
+                    height: 80rpx;
+                    margin: 0 auto;
+                    color: white;
+                    line-height: 80rpx;
+                    background:linear-gradient(#43beed,#298ad5);
+                    border-radius: 40rpx;
+                    margin-top: 25rpx;
+                    font-size: 48rpx;
+                }
+            }
+            .explain{
+                position: relative;
+                margin-top: 5%;
+                text-align: center;
+                font-size: 30rpx;
+                color: white;
+                opacity: 0.5;
+                height: 50rpx;
+                line-height: 50rpx;
+                .kefu{
+                    position: fixed;
+                    bottom: 30rpx;
+                    right: 10rpx;
+                    font-size: 26rpx;
+                    width: 180rpx;
+                    image{
+                        position: absolute;
+                        top: 10rpx;
+                        left: 0;
+                        width: 40rpx;
+                        height: 40rpx;
+                    }
+                    text{
+                        color: #4e367c;
+                        padding-left: 20rpx;
+                    }
+                }
+            }
+        }
+    }
+    .animation5{
+        animation: spin .5s ease infinite;
+    }
+    @keyframes spin {
+    0% {
+        background-image: url('http://cdnimg.bigernews.com/group6/M00/C9/73/CgoFCFsFG2iAfak4AAAOl469Gzc554.png');
+    }
+    50% {
+        background-image: url('http://cdnimg.bigernews.com/group6/M00/C9/6E/CgoFCFsFG1mAd6r8AAAO1geQ5nU169.png');
+    }
+    100%{
+        background-image: url('http://cdnimg.bigernews.com/group6/M00/C9/73/CgoFCFsFG2iAfak4AAAOl469Gzc554.png');
+    }
+  }
+    .successBox,
+    .confirmBox{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .6);
+        .successDetail,
+        .confirmDetail{
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            width: 580rpx;
+            height: 600rpx;
+            margin-left: -290rpx;
+            border-radius: 40rpx;
+            background-color: white;
+            font-size: 30rpx;
+            .successTitle,
+            .confirmTitle{
+                font-size: 36rpx;
+                color: white;
+                font-weight: bold;
+                text-align: center;
+                background-color: #00cc66;
+                height: 70rpx;
+                line-height: 70rpx;
+                border-top-left-radius: 40rpx;
+                border-top-right-radius: 40rpx;
+            }
+            .successImage,
+            .confirmIamge{
+                height: 192rpx;
+                width: 100%;
+                position: relative;
+                image{
+                    display: block;
+                    width: 192rpx;
+                    height: 192rpx;
+                    margin: 0 auto;
+                }
+                text{
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    margin-left: -96rpx;
+                    width: 192rpx;
+                    height: 44rpx;
+                    line-height: 44rpx;
+                    text-align: center;
+                    background-color: #f8b741;
+                }
+            }
+            .form{
+                margin-top: 10rpx;
+                view{
+                    height: 40rpx;
+                    width: 400rpx;
+                    position: relative;
+                    margin: 0 auto;
+                    margin-bottom: 30rpx;
+                    text{
+                        position: absolute;
+                        top: 5rpx;
+                        left: 0rpx;
+                        font-size: 30rpx;
+                        font-weight: 800;
+                    }
+                    input{
+                        display: block;
+                        width: 300rpx;
+                        height: 25rpx;
+                        margin: 0 auto;
+                        margin-left: 80rpx;
+                        padding-left: 5rpx;
+                        border: 1rpx solid #626262;
+                    }
+                }
+            }
+            .tips{
+                font-size: 30rpx;
+                color: #626262;
+                text-align: center;
+            }
+            .confirmContent view:last-child{
+                margin-top: 30rpx;
+                font-size: 30rpx;
+                // color: #626262;
+                text-align: center;
+            }
+            .submiet,.confirm{
+                position: absolute;
+                width: 200rpx;
+                height: 60rpx;
+                background-color: #00cc66;
+                text-align: center;
+                line-height: 60rpx;
+                border-radius: 30rpx;
+                left: 50%;
+                bottom: 20rpx;
+                margin-left: -100rpx;
+                color: white;
+            }
+        }
+        .confirmDetail{
+            width: 580rpx;
+            height: 450rpx;
+        }
+    }
+    .failBox{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .6);
+        .failDetail{
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            width: 580rpx;
+            height: 400rpx;
+            margin-left: -290rpx;
+            border-radius: 40rpx;
+            background-color: white;
+            font-size: 30rpx;
+            .failTitle{
+                background-color: #00cc66;
+                height: 70rpx;
+                line-height: 70rpx;
+                border-top-left-radius: 40rpx;
+                border-top-right-radius: 40rpx;
+            }
+            .failContent{
+                width: 100%;
+                text-align: center;
+                margin-top: 100rpx;
+                view:first-child{
+                    font-size: 36rpx;
+                    font-weight: 700;
+                }
+                view:last-child{
+                    font-size: 30rpx;
+                    color: #626262;
+                }
+            }
+            .failConfirm{
+                position: absolute;
+                width: 200rpx;
+                height: 60rpx;
+                background-color: #00cc66;
+                text-align: center;
+                line-height: 60rpx;
+                border-radius: 30rpx;
+                left: 50%;
+                bottom: 20rpx;
+                margin-left: -100rpx;
+                color: white;
+            }
+        }
+    }
+}
+</style>
+<template>
+    <view class='box'>
+        <!-- 顶部 -->
+        <view class='topImage'><image src='../image/pic_goodluck.png'></image></view>
+        <!-- 跑马灯 -->
+        <view class='paomadeng animation5'></view>
+        <!-- 抽奖内容 -->
+        <view class='blackBox'>
+                <view wx:for='{{goodsList}}' class="item {{item.id === currentId?'leight':''}}" wx:key="{{index}}" @tap='startSelect({{item.id}})'>
+                    <image src='{{item.img}}'></image>
+                    <view class='text' wx:if='{{item.id !== 9}}'>{{item.name}}</view>
+                </view>
+        </view>
+         <!--底部  -->
+        <view class='footer'>
+            <view class='changes'>
+                <view>您还有<text>{{userStatus.drawTime}}次</text>抽奖机会</view>
+                <view>分享至群可再获得一次机会</view>
+                <button open-type='share' @touchstart='clickAnimation' animation='{{shareAnimation}}'>分享</button>
+            </view>
+            <view class='explain'>
+                <!-- <text>页面技术由 未来游戏 提供</text> -->
+                <view class='kefu'><image src='../image/pic_kefu.png'></image><text>联系客服</text></view>
+            </view>
+        </view>
+        <!-- 弹出层 恭喜中奖 -->
+        <view class='successBox' wx:if='{{shadeShow}}'>
+            <view class='successDetail' animation='{{successBoxAnimation}}'>
+                <view class='successTitle'>恭喜中奖</view>
+                <view class='successImage'><image src='{{selectItem.img}}'></image><text>{{selectItem.name}}</text></view>
+                <view class='form'>
+                    <view><text>姓名</text><input value='' type='text' @input='inputName'/></view>
+                    <view><text>手机</text><input value='' type='number' @input='inputPhone'/></view>
+                </view>
+                <view class='tips'>
+                    <view>请填写个人信息</view>
+                <view>客服会在48小时内与您联系</view>
+                </view>
+                <view class='submiet' @tap='submiet'>提交</view>
+            </view>
+        </view>
+        <!-- 弹出层 确认中奖 -->
+        <view class='confirmBox' wx:if='{{confirmBoxShow}}'>
+            <view class='confirmDetail' animation='{{successBoxAnimation}}'>
+                <view class='confirmTitle'>恭喜中奖</view>
+                <view class='confirmContent'>
+                    <view class='confirmIamge'><image src='{{selectItem.img}}'><text>{{selectItem.name}}</text></image></view>
+                    <view>已打入您的账户，可在‘我的’中查看</view>
+                </view>
+                <view class='confirm' @tap='confirm'>知道了</view>
+            </view>
+        </view>
+        <!-- 弹出层 未中奖 -->
+        <view class='failBox' wx:if='{{failShadeShow}}'>
+            <view class='failDetail'>
+                <view class='failTitle'></view>
+                <view class='failContent'>
+                    <view>很遗憾未中奖</view>
+                    <view>下次再加油哦</view>
+                </view>
+                <view class='failConfirm' @tap='failConfirm'>知道了</view>
+            </view>
+        </view>
+        <!-- 可用次数不足 -->
+        <view class='failBox' wx:if='{{unableShow}}'>
+            <view class='failDetail'>
+                <view class='failTitle'></view>
+                <view class='failContent'>
+                    <view>{{selectItem.msg}}</view>
+                    <!-- <view>下次再加油哦</view> -->
+                </view>
+                <view class='failConfirm' @tap='unableConfirm'>知道了</view>
+            </view>
+        </view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class select extends wepy.page {
+    config = {
+        window: {
+            disableScroll: true
+        }
+    }
+    data = {
+        shareAnimation: null,
+        successBoxAnimation: null,
+        currentId: 0,
+        selectItem: null,
+        shadeShow: false,
+        failShadeShow: false,
+        confirmBoxShow: false,
+        unableShow: false,
+        luckyName: null,
+        luckyPhone: null,
+        goodsList: [],
+        userStatus: {}
+    }
+    onLoad() {
+        this.baseURL = this.$parent.globalData.baseURL;
+        this.accessToken = wx.getStorageSync('access-token');
+        this. headerClient = "2500" + '/miniapp/wechat/1.0.0/' + "1";
+        this.getList();
+        this.getUserStatus();
+    }
+    methods = {
+        startSelect(e) {
+            console.log(e)
+            if(e !==9)return;
+            var that = this;
+            let firstTimeNumber = 0;
+            that.currentId = 0;
+            let maxTime = Math.floor(Math.random()*3+3);
+            wepy.request({
+                header: {'Client': this. headerClient},
+                url: this.baseURL + '/activity/user/draw-prize?access_token='+ this.accessToken,
+                data: {
+                    act_id: 1
+                }
+                }).then((res)=>{
+                    if (res.data.code !== -1) {
+                        that.unableShow = true;
+                        that.selectItem = res.data;
+                        that.$apply();
+                    }else{
+                        that.selectItem = {id: 1, type: 1};
+                        let firstTime = setInterval(()=>{
+                        that.currentId++;
+                        firstTimeNumber +=100;
+                        if (that.currentId > 8) {
+                            that.currentId = 1;
+                            that.$apply();
+                        }
+                        if (firstTimeNumber/1000 >= maxTime) {
+                            clearInterval(firstTime);
+                            let secondTime = setInterval(()=>{
+                                that.currentId++;
+                                if (that.currentId > 8) {
+                                    that.currentId = 1;
+                                }
+                                if (that.selectItem.id === that.currentId) {
+                                    clearInterval(secondTime);
+                                    if(that.selectItem.type === 1 || that.selectItem.type === 2){
+                                        that.confirmBoxShow = true;
+                                        that.setTime200(that);
+                                    } else if(that.selectItem.type === 3){
+                                        that.shadeShow = true;
+                                        that.setTime200(that);
+                                    }
+                                }
+                                that.$apply();
+                            },300);
+                        }
+                        that.$apply();
+                    },100)
+                }
+            })
+        },
+        clickAnimation() {
+            this.shareAnimation = null;
+            let animation = wx.createAnimation({
+                transformOrigin: "50% 50%",
+                duration: 300,
+                timingFunction: "line",
+                delay: 0
+                });
+            animation.scale(.9).step();
+            animation.scale(1.1).step();
+            animation.scale(1).step();
+            this.setData({
+                [this.$prefix + 'shareAnimation']: animation.export()
+            })
+        },
+        submiet() {
+            this.getUserStatus();
+            this.shadeShow = false;
+            this.currentId = 0;
+        },
+        confirm() {
+            this.currentId = 0;
+            this.getUserStatus();
+            this.confirmBoxShow = false;
+        },
+        failConfirm() {
+            this.failShadeShow = false;
+        },
+        unableConfirm() {
+            this.unableShow = false;
+            this.currentId = 0;
+        }
+    }
+    getList() {
+        wepy.request({
+            header: {'Client': this. headerClient},
+            url: this.baseURL+'/activity/user/get-prize-list?access_token='+ this.accessToken,
+            data: {
+                act_id: 1
+            }
+        }).then((res)=>{
+            this.goodsList = res.data.res;
+            this.$apply();
+        })
+    }
+    inputName(e) {
+        this.luckyName = e.detail.value;
+        console.log(this.luckyName);
+    }
+    inputPhone(e) {
+        this.luckyPhone = e.detail.value;
+        console.log(this.luckyPhone);
+    }
+    onShareAppMessage(res) {
+        var that = this;
+        return {
+            title: '我竟然没有看懂湖北的方言，谁懂快来帮帮我',
+            path: '/pages/index',
+            imageUrl: '../image/share_1024.jpg',
+            success: function(res) {
+                wx.showToast({
+                title: '成功',
+                icon: 'success',
+                duration: 300
+                });
+                wepy.request({
+                    header: {'Client': this. headerClient},
+                    url: that.baseURL + '/activity/user/share-draw?access_token='+ this.accessToken,
+                    data: {
+                        act_id: 1
+                    }
+                }).then((res) => {
+                    that.userStatus.drawTime = res.data.res;
+                    that.$apply();
+                });
+            }
+        }
+    }
+    setTime200(that) {
+        setTimeout(() => {
+            that.successBoxAnimation = null;
+            let animation = wx.createAnimation({
+                transformOrigin: "50% 50%",
+                duration: 200,
+                timingFunction: "ease",
+                delay: 0
+            });
+            animation.rotate(10).step();
+            animation.rotate(10).step();
+            animation.rotate(-10).step();
+            animation.rotate(5).step();
+            animation.rotate(-5).step();
+            animation.rotate(0).step();
+            that.setData({
+                [that.$prefix + 'successBoxAnimation']: animation.export()
+            })
+        }, 200);
+    }
+    //  ---------------获取用户状态-------------------------------
+    getUserStatus() {
+        wepy.request({
+            header: {'Client': this. headerClient},
+            url: this.baseURL + '/activity/user/get-user-state?access_token='+ this.accessToken,
+            data: {
+            act_id: 1
+            }
+        }).then((res) => {
+            this.userStatus = res.data.res;
+            this.$apply();
+        });
+    }
+}
+</script>
+
+

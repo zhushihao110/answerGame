@@ -1,0 +1,793 @@
+<style lang="less">
+page{
+  text-align: center;
+  margin: 0 auto;
+  background-color: #6848a6;
+}
+/*顶部  */
+.top{
+  width: 100%;
+  position: relative;
+}
+.top .picBg{
+  display: block;
+  width: 100%;
+  height: 100rpx;
+}
+.top .picMusic{
+  display: block;
+  width: 72rpx;
+  height: 72rpx;
+  position: absolute;
+  top: 10rpx;
+  right: 25rpx;
+}
+/*主题内容开始  */
+.container .image{
+  position: relative;
+  width: 750rpx;
+  height: 542rpx;
+  margin: 0 auto;
+  image:nth-child(1){
+  display: block;
+  width: 100%;
+  height: 100%;
+  }
+  image:last-child{
+    position: absolute;
+    top: 416rpx;
+    left: 90rpx;
+    width: 132rpx;
+    height: 122rpx;
+  }
+  .animation5{
+    animation: spin 1s ease infinite;
+  }
+}
+@keyframes spin {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(20rpx);
+    }
+    100%{
+      transform: translateY(0)
+    }
+  }
+.jionPeople{
+  color: white;
+  font-size: 32rpx;
+}
+.jionPeople .peopleNum{
+  color: #f4cd11;
+}
+.gifImg{
+  width: 150rpx;
+  height: 100rpx;
+  position: fixed;
+  top: 79%;
+  right: 0;
+  background-size: cover;
+}
+.gifImg view{
+  width: 150rpx;
+  height: 70rpx;
+  background-size: 100%;
+  position: absolute;
+  top: 25rpx;
+}
+.change{
+  animation: change 3.5s  ease infinite;
+}
+@keyframes change{
+    0%{
+      background-image: url('http://cdnimg.bigernews.com/group6/M00/56/03/CgoFCFsHghmAQkaHAAAM3EH9diE594.png?142|73')
+    }
+    50%{
+      background-image: url('http://cdnimg.bigernews.com/group6/M00/56/06/CgoFCFsHgjWACM7-AAAMXj1Cp6w168.png?142|73')
+    }
+    100%{
+      background-image: url('http://cdnimg.bigernews.com/group6/M00/56/03/CgoFCFsHghmAQkaHAAAM3EH9diE594.png?142|73')
+    }
+}
+/*按钮部分  */
+.btn{
+  margin-top: 30rpx;
+  width: 100%;
+}
+.btn .startBtn{
+  color: white;
+  font-size: 48rpx;
+  background:linear-gradient(#f6da0a,#e78638);
+  width: 450rpx;
+  height: 100rpx;
+  margin: 0 auto;
+  line-height: 100rpx;
+  border-radius: 50rpx;
+  font-weight: 800;
+  text-shadow: 1px 0 0 #d8610c,0 1px 0 #d8610c,-1px 0 0 #d8610c,0 -1px 0 #d8610c;
+  box-shadow: 0 2px 5px #2e2049;
+}
+.btn .shareBtn{
+  box-sizing: border-box;
+  font-size: 34rpx;
+  position: relative;
+  color: white;
+  width: 450rpx;
+  height: 100rpx;
+  margin: 0 auto;
+  line-height: 100rpx;
+  border-radius: 50rpx;
+  margin-top: 30rpx;
+  padding-left: 80rpx;
+  background:linear-gradient(#3fcaff,#634cda);
+  // text-shadow: 1px 0 0 #29609d,0 1px 0 #29609d,-1px 0 0 #29609d,0 -1px 0 #29609d;
+  box-shadow: 0 2px 5px #2e2049;
+}
+.btn .shareBtn>image{
+  display: block;
+  width: 51rpx;
+  height: 41rpx;
+  position: absolute;
+  top: 30rpx;
+  left: 30rpx;
+}
+.shareBtn::after{
+  border:none;
+}
+/*底部  */
+.footer{
+  width: 100%;
+  text-align: center;
+  //padding-bottom:20px;
+  padding-top:16rpx;
+}
+.footer .rule{
+  width: 100%;
+  margin-top: 25rpx;
+  color: #aa94df;
+  font-size: 26rpx;
+}
+.footer .rule image{
+  display: block;
+  width: 72rpx;
+  height: 72rpx;
+  margin: 0 auto;
+  margin-bottom: 10rpx;
+}
+.footer .explain{
+  position: relative;
+  margin-top: 5%;
+  text-align: center;
+  font-size: 30rpx;
+  color: white;
+  opacity: 0.5;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.footer .explain .kefu{
+  padding: 0 6rpx;
+  display: block;
+  position: fixed;
+  bottom: 30rpx;
+  right: 10rpx;
+  font-size: 26rpx;
+  width: 180rpx;
+  border: none;
+  outline: none;
+  border-radius:180rpx;
+  background-color: #ffffff;
+}
+.footer .explain .kefu image{
+  position: absolute;
+  top: 10rpx;
+  left: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.footer .explain .kefu text{
+  color: #3d3157;
+  padding-left: 30rpx;
+}
+/*游戏规则  */
+.gameRule{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .7);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.gameRule .ruleBox{
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  z-index: 1000;
+  background: rgba(255,255,255, 1);
+  width: 580rpx;
+  height: 900rpx;
+  border-radius: 25rpx;
+  margin-left: -290rpx;
+}
+.gameRule .ruleBox .ruleTop{
+  width: 580rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  font-size: 36rpx;
+  background-color: #ff9933;
+  border-top-right-radius: 25rpx;
+  border-top-left-radius: 25rpx;
+}
+.gameRule .ruleBox .ruleItem{
+  font-size: 28rpx;
+  width: 580rpx;
+  overflow-y: scroll;
+  padding: 0 20rpx;
+  text-align: left;
+  box-sizing: border-box;
+  padding-top: 22rpx;
+}
+.gameRule .ruleComfirm{
+  position: absolute;
+  bottom: 15rpx;
+  left: 50%;
+  width: 240rpx;
+  height: 64rpx;
+  margin-left: -120rpx;
+  text-align: center;
+  color: white;
+  background-color: #00cc66;
+  line-height: 64rpx;
+  font-size: 28rpx;
+  border-radius: 32rpx;
+  font-weight: bold;
+}
+/* -----------------------------------遮罩层--------------------------------------  */
+.shadeBox{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, .5);
+  .contentBox{
+    position: absolute;
+    width: 580rpx;
+    height: 440rpx;
+    background-color: white;
+    border-radius: 30rpx;
+    top: 30%;
+    left: 50%;
+    margin-left: -290rpx;
+    .score{
+      position: relative;
+      width: 580rpx;
+      height: 370rpx;
+      margin: 0 auto;
+      text-align: center;
+      color: #493a26;
+      box-sizing: border-box;
+      padding-top: 100rpx;
+      view:nth-child(1){
+        font-size: 42rpx;
+        font-weight: bold;
+      }
+      .getUserInfoBtn{
+        width:200rpx;
+        height:60rpx;
+        background-color:#00cc66;
+        text-align:center;
+        line-height:60rpx;
+        border-radius:30rpx;
+        left:50%;
+        bottom:-80rpx;
+        margin-left:-100rpx;
+        color:white;
+      }
+    }
+    .title{
+      font-size: 36rpx;
+      color: white;
+      width: 580rpx;
+      height: 70rpx;
+      text-align: center;
+      background-color: #00cc66;
+      font-weight: bold;
+      line-height: 70rpx;
+      border-top-left-radius: 30rpx;
+      border-top-right-radius: 30rpx;
+    }
+    .noshare{
+      position: absolute;
+      bottom: 25rpx;
+      left: 38rpx;
+      width: 240rpx;
+      height: 64rpx;
+      background-color: #ff9933;
+      line-height: 64rpx;
+      color: white;
+      border-radius: 40rpx;
+      font-weight: bold;
+      font-size: 28rpx;
+    }
+    .restMsg{
+      position: absolute;
+      bottom: 25rpx;
+      left: 50%;
+      margin-left: -120rpx;
+    }
+  }
+}
+</style>
+<template>
+<view class='page' style='width: {{dveWidth}}px; height: {{dveHeight}}px'>
+  <view wx:if="{{loding}}">
+    <!--顶部  -->
+    <view class='top'>
+      <image src='../image/pic_bg.png' class='picBg'></image>
+      <!--<image src='../image/pic_music.png' class='picMusic' @tap='musiceClick' animation='{{animationData4}}'></image>-->
+    </view>
+    <!--主题内容部分  -->
+    <view class='container'>
+      <view class='image'>
+        <image src='../image/pic_huodong.png'></image>
+        <image src='../image/pic_hongbao.png' animation='{{animation5}}' class='animation5'></image>
+      </view>
+      <view class='jionPeople'><view>已有<text class='peopleNum'>{{jionPeople}}</text>人参加</view></view>
+      <view class='gifImg' @tap.stop='backLook'>
+        <view class="change"></view>
+      </view>
+      <view class='btn'>
+        <view class='startBtn' animation='{{animationData1}}' @tap='startAnswer'>开始答题({{useFulTime}})</view>
+        <view animation='{{animationData2}}' @touchstart='animation2'><button open-type="share" class='shareBtn'><image src='../image/pic_weixin.png'></image>邀请朋友来挑战({{shareTime}})</button></view>
+      </view>
+      <!--底部  -->
+      <view class='footer'>
+        <view class='rule'>
+          <image src='../image/pic_rule.png' @tap='ruleBox'></image>
+          <view @tap='ruleBox'>规则</view>
+        </view>
+        <view class='explain'>
+          <!-- <text>页面技术由 未来游戏 提供</text> -->
+          <button open-type="contact" class='kefu' session-from="{'nickName':'答题小程序'}">
+            <image src='../image/pic_kefu.png'></image><text>联系客服</text>
+          </button>
+          <!--<button open-type="contact" class='kefu' ></button>-->
+        </view>
+      </view>
+    </view>
+    <!--规则页面  -->
+    <view class='gameRule' wx:if="{{ruleShow}}">
+      <view class='ruleBox' animation='{{animationData3}}'>
+        <view class='ruleTop'>规则</view>
+        <!-- <view class='closeBox' @tap='ruleBox'><image src='../image/pic_false.png'></image></view> -->
+        <view class='ruleItem'>
+          <view>1、【答题】每位用户每天可参与答题活动2次，每道题分值为5-10分，每道题限时20秒作答，连续答对15道题或答错（超时未作答视答错），该轮答题结束，结算分数；
+</view>
+          <view>2、【结算】得分达到95分-100分，获抽奖机会3次；达60-90分，获抽奖机会2次；得50-55分时，获得1次抽奖机会；得20-45分时，获得1次抽奖机会；得0-15分时，没有抽奖机会。</view>
+          <view>3、【分享】答题过程中答错时，有1次分享复活机会，点击分享到微信群，则可继续重新答题；答题活动页和结算页都可分享好友，成功分享即新增1次答题机会，每天限制新增5次机会；到抽奖页，成功分享给微信群，可额外直接获得1次抽奖机会；</view>
+          <view>4、【奖励】100%中奖。奖品有金币，零钱（可提现），小米电视等；</view>
+          <view>5、活动最终解释权归该小程序所有。</view>
+        </view>
+        <view class='ruleComfirm' bindtap='ruleBox'>知道了</view>
+      </view>
+    </view>
+    <!-- 弹出层 -->
+    <view class='shadeBox' wx:if="{{restMsSHow}}">
+      <view class='contentBox' animation='{{animationData3}}'>
+        <view class='title'>提示</view>
+        <view class='score'>
+          <view>{{restMsg}}</view>
+          <view @tap='noshare' class='noshare restMsg'>确定</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 弹出层 -->
+  <view class='shadeBox' wx:if="{{getUserInfoSHow}}">
+    <view class='contentBox'>
+      <view class='title'>提示</view>
+      <view class='score'>
+        <view>答题送电视</view>
+        <view>开始挑战方言大赛</view>
+        <button open-type='getUserInfo' bindgetuserinfo='onGotUserInfo' class='getUserInfoBtn'>确定</button>
+      </view>
+    </view>
+  </view>
+
+</view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  export default class Index extends wepy.page {
+    config = {
+      window: {
+        disableScroll: true
+      }
+    }
+    data = {
+      useFulTime: 2,
+      shareTime: 2,
+      getUserInfoSHow: false,
+      loding: false,
+      name: '首页测试',
+      ruleShow: false,
+      musice: false,
+      number: 0,
+      obj:null,
+      dveWidth: null,
+      dveHeight: null,
+      animationData1: null,
+      animationData2: null,
+      animationData3: null,
+      animationData4: null,
+      animation5: null,
+      isFirst: true,
+      jionPeople: 0,
+      userStatus: {},
+      restMsg: null,
+      restMsSHow: false
+    }
+    methods = {
+      ruleBox(e) {
+        this.ruleShow = !this.ruleShow;
+        this.animationData3 = null;
+        if (this.ruleShow){
+          setTimeout(() => {
+            this.animation = wx.createAnimation({
+            transformOrigin: "50% 50%",
+            duration: 100,
+            timingFunction: "ease",
+            delay: 0
+          });
+          this.animation.scale(1.1).step();
+          this.animation.scale(1).step();
+          this.animationData3 = this.animation.export();
+          this.$apply();
+          }, 50);
+        }
+      },
+      startAnswer(e) {
+        var that = this;
+        wepy.request({
+            header: {'Client': that.headerClient},
+            url: that.baseURL + '/activity/user/get-user-state?access_token='+ that.$parent.globalData.accessToken,
+            data: {
+              act_id: 1
+            }
+          }).then((res) => {
+            if(res.data.res.usefulTime<1){
+                that.restMsSHow = true;
+                that.restMsg = '答题次数已用完';
+                that.$apply();
+            }else if(res.data.res.usefulTime>0){
+                  wx.redirectTo({
+                    url: '/pages/test',
+                  })
+                }
+          });
+      },
+      noshare() {
+        this.restMsSHow = false;
+      },
+      onGotUserInfo(e) {
+        var that = this;
+        that.$parent.globalData.userInfo = e.userInfo;
+        that.getUserInfoSHow = false;
+console.log(123412412341234123412341234)
+console.log(e.userInfo)
+//        if(e.detail.errMsg !== 'getUserInfo:ok'){
+//          wx.openSetting();
+//        }else{
+//          wx.checkSession({
+//              success:function () {//登录态未过期
+//              },
+//              fail:function () {
+                wx.login({
+                  success(res) {
+
+                    const headerClient = "2500" + '/miniapp/wechat/1.0.0/' + "1";
+                    wepy.request({
+                      url: that.baseURL + '/user/account/mini-app-login',
+                      data: {
+                        code: res.code,
+                        appid: 'wxebac0fc347d6f531',
+                        user_info: {
+                          iv: e.detail.iv,
+                          encryptedData: e.detail.encryptedData
+                        }
+                      },
+                      header: {'Client': headerClient},
+                      method: 'POST'
+                    }).then((res) => {
+                      that.loding = true;
+                      that.$parent.globalData.accessToken=res.data['access-token'];
+                      that.grtJoinTime();
+                      that.getUserStatus();
+                      that.getOutUser();
+                      that.$apply();
+                    });
+
+
+                  }
+                });
+//              }
+//          })
+//
+//      }
+    },
+    //  -------------每次触发动画前清空状态--------------
+    animation1() {
+      this.setData({
+        animationData1: null
+      });
+      let animation = wx.createAnimation({
+        transformOrigin: "50% 50%",
+        duration: 100,
+        timingFunction: "linear",
+        delay: 0
+      });
+      animation.scale(1).step();
+      animation.scale(0.9).step();
+      animation.scale(1).step();
+      this.setData({
+        [this.$prefix + 'animationData1']: animation.export()
+      })
+    },
+    animation2() {
+      this.setData({
+        animationData2: null
+      });
+      let animation = wx.createAnimation({
+          transformOrigin: "50% 50%",
+          duration: 100,
+          timingFunction: "ease",
+          delay: 0
+        });
+      animation.scale(0.8).step();
+      animation.scale(1).step();
+      this.setData({
+        [this.$prefix + 'animationData2']: animation.export()
+      })
+    },
+    backLook() {
+      console.log('backLook----')
+      wx.navigateToMiniProgram({
+        appId: 'wxbe40f0285b55d0ec',
+        path: "/zh_tcwq/pages/type/type?type_id=11&type_name=方言讨论区",
+        envVersion: 'trial'
+      })
+    }
+  }
+
+    // ---------初始化数据------------------
+    onLoad() {
+      var that = this;
+//      this.accessToken = this.$parent.globalData.accessToken;
+      that.baseURL = that.$parent.globalData.baseURL;
+      that.headerClient = that.$parent.globalData.headerClient;
+      that.code = that.$parent.globalData.code;
+      var res = wx.getSystemInfoSync();
+      that.dveWidth = res.windowWidth;
+      that.dveHeight = res.windowHeight;
+      that.musice = false;
+      that.musiceClick();
+      wx.getUserInfo({
+        success: function (res) {
+          that.getUserInfoSHow = false;
+          that.$parent.globalData.userInfo = res.userInfo;
+          console.log("99999999999999999")
+          console.log(that.$parent.globalData.userInfo)
+          that.$apply();
+          console.log('u info success')
+          if(!that.$parent.globalData.accessToken){
+            console.log('has not accessToken')
+            wx.login({
+              success(res) {
+                wx.getUserInfo({
+                  withCredentials:true,
+                  success: function (resp) {
+                    const headerClient = "2500" + '/miniapp/wechat/1.0.0/' + "1";
+                    wepy.request({
+                      url: that.baseURL + '/user/account/mini-app-login',
+                      data: {
+                        code: res.code,
+                        appid: 'wxebac0fc347d6f531',
+                        user_info: {
+                          iv: resp.iv,
+                          encryptedData: resp.encryptedData
+                        }
+                      },
+                      header: {'Client': headerClient},
+                      method: 'POST'
+                    }).then((res) => {
+                      that.loding = true;
+                      that.$parent.globalData.accessToken=res.data['access-token'];
+                      that.grtJoinTime();
+                      that.getUserStatus();
+                      that.getOutUser();
+                      that.$apply();
+                    });
+                  }
+                })
+              }
+            });
+          } else {
+            that.grtJoinTime();
+            that.getUserStatus();
+            that.getOutUser();
+            that.$apply();
+          }
+
+
+        },
+        fail: function (error) {
+          console.log('u info fail')
+          that.getUserInfoSHow = true;
+          that.$apply();
+          console.log(that.getUserInfoSHow)
+        }
+      })
+    }
+    //  ----------关闭页面，或者跳转到其他页面
+    onHide() {
+      wx.setStorageSync('musice',this.musice);
+      //
+    }
+    onShow() {
+      let that = this;
+
+//      if(this.accessToken){
+//          this.getUserInfoSHow = false;
+//          wx.showLoading({
+//            title: '正在加载'
+//          });
+//          this.grtJoinTime();
+//          this.getUserStatus();
+//        this.getOutUser();
+////          if(this.code){
+////            this.getOutUser();
+////          }
+//        }
+    }
+    onUnload() {
+      wx.setStorageSync('musice',this.musice);
+//      this.musiceRotate(true);
+    }
+    //  --------------播放音乐---------------------------------
+    musiceClick() {
+      const that = this;
+      that.musice = !that.musice;
+        if (that.musice){
+          let date = new Date();
+          console.log(date)
+          console.log('--------begin play music-------')
+//          wx.playBackgroundAudio({
+//            dataUrl: 'https://heji.g2u7.cn/thinkphp/bgm_a.mp3'
+//          });
+//          this.musiceRotate();
+        }else{
+//          wx.pauseBackgroundAudio();
+//          this.musiceRotate(true);
+        }
+      }
+    // -----------------音乐旋转动画----------------------
+    musiceRotate(state) {
+      var that = this;
+      if(state){
+        clearInterval(that.setIntervalMusice);
+        return;
+      }
+      that.setIntervalMusice = setInterval(()=>{
+        that.setData({
+          animationData4: null
+        });
+        that.animation = wx.createAnimation({
+          transformOrigin: "50% 50%",
+          duration: 300,
+          timingFunction: "line",
+          delay: 0
+        });
+        that.number++;
+        that.animation.rotate(5*(that.number)).step();
+        that.animationData4 = that.animation.export();
+        that.$apply();
+      },100)
+    }
+    // -------------------分享弹框--------------------------
+    onShareAppMessage(res) {
+     var that = this;
+      return {
+        title: '我竟然没有看懂湖北的方言，谁懂快来帮帮我',
+        path: '/pages/index',
+        imageUrl: '../image/share_1024.jpg',
+        success: function(rese) {
+          wepy.request({
+            url: that.baseURL+ '/activity/user/share-question?access_token='+ that.$parent.globalData.accessToken,
+            data: {
+              act_id: 1
+            }
+          }).then((res) => {
+              if (res.data.code === -1) {
+                  that.restMsSHow = true;
+                  that.restMsg = res.data.msg;
+                  that.$apply();
+              }else{
+                that.getUserStatus();
+                wx.showToast({
+                  title: '成功',
+                  icon: 'success',
+                  duration: 500
+                });
+              }
+          });
+        },
+        fail: function(res) {
+          // 转发失败
+        }
+      }
+    }
+    //  ------获取参加的人数------------------
+    grtJoinTime() {
+      const that = this;
+      wepy.request({
+          header: {'Client': that.headerClient},
+          url: this.baseURL+ '/activity/user/get-sum-join-time?access_token='+ that.$parent.globalData.accessToken,
+          data: {
+            act_id: 1
+          }
+        }).then((res) => {
+          console.log(res.data);
+          if(res.data.code === 20000) {
+            that.getUserInfoSHow = true;
+            that.loding = false;
+            wx.hideLoading();
+            that.$apply();
+          }else{
+            that.jionPeople = res.data.res;
+            that.loding = true;
+            wx.hideLoading();
+            that.$apply();
+          }
+        });
+    }
+    //  ---------------获取用户状态-------------------------------
+    getUserStatus() {
+      const that = this;
+      wepy.request({
+        header: {'Client': that.headerClient},
+        url: that.baseURL + '/activity/user/get-user-state?access_token='+ that.$parent.globalData.accessToken,
+        data: {
+          act_id: 1
+        }
+      }).then((res) => {
+        that.useFulTime = res.data.res.usefulTime;
+        that.shareTime = res.data.res.timeLimit - res.data.res.usefulTime - res.data.res.usedTime;
+        that.$apply();
+      });
+    }
+    // 获取看点跳转过来的  用户信息
+    getOutUser() {
+      const that = this;
+      console.log('getOutUser')
+      console.log('this.code---'+that.code)
+      if(that.code === undefined){
+        that.code ='';
+      }
+      wepy.request({
+        header: {'Client': that. headerClient},
+        url: that.baseURL + '/activity/user/init-out-user?access_token='+ that.$parent.globalData.accessToken,
+        data: {
+          code: that.code,
+          act_id: 1
+        }
+      })
+    }
+}
+</script>

@@ -1,0 +1,973 @@
+<style lang="less">
+page{
+  text-align: center;
+  background-color: #6848a6;
+}
+/*大图  */
+.bigImg{
+  position: relative;
+  width: 100%;
+}
+.bigImg .picBg{
+  display: block;
+  width: 100%;
+  height: 100rpx;
+}
+.bigImg image{
+  display: block;
+  width: 592rpx;
+  height: 412rpx;
+  margin: 0 auto;
+}
+.bigImg .picMusic{
+  display: block;
+  width: 72rpx;
+  height: 72rpx;
+  position: absolute;
+  top: 10rpx;
+  right: 25rpx;
+}
+/*结果文字部分*/
+.text{
+  width: 100%;
+  text-align: center;
+  margin-top: 15rpx;
+  font-weight: bold;
+}
+.text .title{
+    font-size: 48rpx;
+    color: white;
+}
+.text .result{
+  font-size: 25rpx;
+  color: #cccccc;
+  padding-top: 32rpx;
+  padding-bottom: 5rpx;
+}
+.text .result text{
+  color: #ffff00;
+}
+.text .conditions,
+.text .opportunity{
+  font-size: 28rpx;
+  color: #cccccc;
+  margin-bottom: 15rpx;
+}
+.text .conditions text,
+.text .opportunity text{
+  color: #ffff00;
+}
+.gifImg{
+  width: 142rpx;
+  height: 73rpx;
+  position: fixed;
+  top: 79%;
+  right: 0;
+  background-size: cover;
+}
+.change{
+  animation: change 3.5s  ease infinite;
+}
+@keyframes change{
+    0%{
+      background-image: url('http://cdnimg.bigernews.com/group6/M00/56/03/CgoFCFsHghmAQkaHAAAM3EH9diE594.png?142|73')
+    }
+    50%{
+      background-image: url('http://cdnimg.bigernews.com/group6/M00/56/06/CgoFCFsHgjWACM7-AAAMXj1Cp6w168.png?142|73')
+    }
+    100%{
+      background-image: url('http://cdnimg.bigernews.com/group6/M00/56/03/CgoFCFsHghmAQkaHAAAM3EH9diE594.png?142|73')
+    }
+}
+/*按钮  */
+.functionBtn{
+  width: 100%;
+  /* margin-top: 40rpx; */
+}
+.functionBtn .goLucky{
+  width: 360rpx;
+  height: 90rpx;
+  border-radius: 45rpx;
+  margin: 0 auto;
+  line-height: 90rpx;
+  color: white;
+  font-size: 48rpx;
+}
+.luckyBgk{
+    background:linear-gradient(#f6da0a,#e78638);
+    text-shadow: 1px 0 0 #d8610c,0 1px 0 #d8610c,-1px 0 0 #d8610c,0 -1px 0 #d8610c;
+    box-shadow: 0 2px 5px #2e2049;
+}
+.unluckyBgk{
+    background-color: #666666;
+    box-shadow: 0 2px 5px #2e2049;
+}
+.functionBtn .share{
+  width: 300rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  background:linear-gradient(#3fcaff,#634cda);
+  box-shadow: 0 2px 5px #2e2049;
+  margin: 0 auto;
+  line-height: 80rpx;
+  color: white;
+  margin-top: 50rpx;
+  font-size: 36rpx;
+}
+.functionBtn .remark{
+  color: #cccccc;
+  font-size: 22rpx;
+  margin-top: 15rpx;
+}
+.functionBtn .remark text{
+  color: #ff9933;
+}
+/*底部  */
+.footer{
+  width: 100%;
+  text-align: center;
+  margin-top: 60rpx;
+  padding-bottom: 20rpx;
+}
+.footer .rule{
+  width: 100%;
+  margin-top: 50rpx;
+}
+.footer .rule image{
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+  margin: 0 auto;
+}
+.footer .explain{
+  position: relative;
+  margin-top: 5%;
+  text-align: center;
+  font-size: 30rpx;
+  color: white;
+  opacity: 0.5;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.footer .explain .kefu{
+  padding: 0 6rpx;
+  display: block;
+  position: fixed;
+  bottom: 30rpx;
+  right: 10rpx;
+  font-size: 26rpx;
+  width: 180rpx;
+  border-radius:180rpx;
+  background-color: #ffffff;
+}
+.footer .explain .kefu image{
+  position: absolute;
+  top: 10rpx;
+  left: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.footer .explain .kefu text{
+  color: #3d3157;
+  padding-left: 30rpx;
+}
+.shadeBox{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, .5);
+  .contentBox{
+    position: absolute;
+    width: 580rpx;
+    height: 440rpx;
+    background-color: white;
+    border-radius: 30rpx;
+    top: 30%;
+    left: 50%;
+    margin-left: -290rpx;
+    .score{
+      position: relative;
+      width: 580rpx;
+      height: 370rpx;
+      margin: 0 auto;
+      text-align: center;
+      color: #493a26;
+      box-sizing: border-box;
+      padding-top: 100rpx;
+      :nth-child(1){
+        font-size: 42rpx;
+        font-weight: bold;
+      }
+    }
+    .title{
+      font-size: 36rpx;
+      color: white;
+      width: 580rpx;
+      height: 70rpx;
+      text-align: center;
+      background-color: #00cc66;
+      font-weight: bold;
+      line-height: 70rpx;
+      border-top-left-radius: 30rpx;
+      border-top-right-radius: 30rpx;
+    }
+    .noshare{
+      position: absolute;
+      bottom: 25rpx;
+      left: 38rpx;
+      width: 240rpx;
+      height: 64rpx;
+      background-color: #ff9933;
+      line-height: 64rpx;
+      color: white;
+      border-radius: 40rpx;
+      font-weight: bold;
+      font-size: 28rpx;
+    }
+    .restMsg{
+      position: absolute;
+      bottom: 25rpx;
+      left: 50%;
+      margin-left: -120rpx;
+    }
+  }
+}
+.choujiangAni{
+  animation: cjAni .5s  ease ;
+}
+  @keyframes cjAni {
+    0%{
+      transform: scale(0.8);
+    }
+    50%{
+      transform: scale(1.1);
+    }
+    10%{
+      transform: scale(1);
+    }
+  }
+.share-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+}
+
+.share-wrapper {
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.share-overlay {
+  background-color: transparent;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.share-main-wrap {
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  padding: 20rpx 0;
+}
+
+.cancelShareBtn {
+  border-top-width: 4rpx;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  background-color: #fff;
+}
+.footer-wechat {
+  flex-direction: column;
+  position: relative;
+  width: 100rpx;
+}
+
+.footer-wechat image {
+}
+.footer-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(27, 27, 27);
+  font-size: 24rpx;
+  padding: 0 20rpx;
+}
+.footer-item button {
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.footer-item image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.footer-flex1 {
+  flex: 1;
+}
+.share-label {
+  font: 24rpx;
+  color: rgb(27, 27, 27);
+  /*font-family: PingFang-SC-Medium;*/
+}
+.footer-timeline {
+  flex-direction: column;
+  width: 100rpx;
+}
+
+.footer-timeline::before {
+  margin-left: 10rpx;
+}
+
+.footer-timeline image {
+}
+.component-timeline-image {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.component-timeline-image-body {
+  position: relative;
+  width: 225px;
+  height: 340px;
+  background: none;
+  border-radius: 5px;
+  top:-60rpx;
+  /*padding: 28rpx 30rpx 0;*/
+  box-sizing: border-box;
+}
+.display-none {
+  display: none;
+}
+.no-cover {
+  height: 200px;
+}
+.timeline-image {
+  position: relative;
+  width: 225px;
+  height: 340px;
+}
+
+.timeline-image canvas {
+  position: absolute;
+  width: 225px;
+  height: 340px;
+  left: 0;
+  top: 0;
+}
+.btn-save-image {
+  position: absolute;
+  width: 300rpx;
+  height: 70rpx;
+  bottom: -100rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.btn-save-image image {
+  width: 300rpx;
+  height: 70rpx;
+}
+.btn-save-image text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 300rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+}
+</style>
+<template>
+  <view class="page" style='width: {{dveWidth}}px; height: {{dveHeight}}px' wx:if='{{loading}}'>
+  <view class='bigImg'>
+    <image src='../image/pic_bg.png' class='picBg'></image>
+    <image src='../image/pic_victory.png'></image>
+    <!--<image src='../image/pic_music.png' class='picMusic' @tap='musiceClick' animation='{{animationData4}}'></image>-->
+  </view>
+  <view class='text'>
+    <view class='title'>{{title}}</view>
+    <view class='title'>{{titleDetails}}</view>
+    <view class='result'>你的成绩为：<text>{{score}}分</text></view>
+    <!-- <view class='conditions'>抽奖条件：<text>答对{{luckyCondition}}题</text></view> -->
+    <view class='opportunity'>今天你还有<text>{{userStatus.drawTime}}次</text>抽奖机会</view>
+  </view>
+  <view class='gifImg change' @tap='backLook'></view>
+  <view class='functionBtn'>
+    <view wx:if='{{userStatus.drawTime>0}}' animation='{{animationData1}}' class="goLucky luckyBgk choujiangAni" @tap='goSelect' @touchstart='animation1'>赶紧去抽奖</view>
+    <!--<navigator target="miniProgram"-->
+               <!--open-type="navigate"-->
+               <!--app-id="wxbe40f0285b55d0ec"-->
+               <!--path="/pages/select/select?user_id={{user_id}}&user_code={{user_code}}"-->
+               <!--extra-data=""-->
+               <!--version="trial"-->
+               <!--class="goLucky luckyBgk"-->
+               <!--wx:if='{{userStatus.drawTime>0}}'>赶紧去抽奖</navigator>-->
+    <view wx:elif='{{userStatus.drawTime<1}}' class="goLucky luckyBgk" @tap='goBack'>返回首页</view>
+    <button @tap="toggleShare" class='share'>分享(剩余{{shareTime}})</button>
+    <view class='remark'>分享增加<text>1次</text>答题机会</view>
+  </view>
+  <!--底部  -->
+  <view class='footer'>
+    <view class='explain'>
+      <!-- <text>页面技术由 未来游戏 提供</text> -->
+      <button open-type="contact" class='kefu' ><image src='../image/pic_kefu.png'></image><text>联系客服</text></button>
+    </view>
+  </view>
+  <!-- 弹出层 -->
+  <view class='shadeBox' wx:if="{{restMsSHow}}">
+    <view class='contentBox' animation='{{animationData3}}'>
+      <view class='title'>提示</view>
+      <view class='score'>
+        <view>{{restMsg}}</view>
+        <view @tap='noshare' class='noshare restMsg'>确定</view>
+      </view>
+    </view>
+  </view>
+    <!-- 分享框-->
+    <view class='share-container' wx:if='{{popupShare}}'>
+      <view class='share-overlay' @tap='popupShareWin'>
+      </view>
+      <view class='share-wrapper'>
+        <view class='share-main-wrap'>
+          <view class="footer-wechat footer-item {{isShared == 1?'footer-flex1': ''}}">
+            <button open-type="share" hover-class="none"></button>
+            <image src="../image/wode_login_wx@2x.png" mode='aspectFit'></image>
+            <text class='share-label'>微信</text>
+          </view>
+          <view class="footer-timeline footer-item {{isShared == 1?'footer-flex1': ''}}"
+                @tap="_showTimelineImage">
+            <image src="../image/wzxq_qt_pyq@2x.png" mode='aspectFit'></image>
+            <text class='share-label'>朋友圈</text>
+          </view>
+        </view>
+        <!--<button class='cancelShareBtn' @tap='popupShareWin'>取消</button>-->
+      </view>
+    </view>
+
+    <!--分享朋友圈的截图-->
+    <view class="component-timeline-image {{showTimelineImage ? '' : 'display-none'}}" @tap="_closeTimelineImage">
+      <view class="component-timeline-image-body " catchtap="_none">
+        <view class="timeline-image">
+          <canvas canvas-id="timeline-image" disable-scroll="true" bindtouchstart="touchStart" bindtouchmove="touchMove"
+                  bindtouchend="touchEnd"></canvas>
+        </view>
+        <view class="btn-save-image" @tap.stop="_saveImage">
+          <image src="../image/fxxw_btn@2x.png"></image>
+          <text>保存图片</text>
+        </view>
+      </view>
+    </view>
+</view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+    config = {
+      window: {
+        disableScroll: true
+      },
+    };
+    data = {
+      imgs:[],
+      miniappQrcode:'',
+      showTimelineImage: false,
+      popupShare: false,
+      shareTime: 2,
+      loading: false,
+      luckyCondition: 10,
+      musice: true,
+      enableBtn: false,
+      score: null,
+      dveWidth: null,
+      dveHeight: null,
+      animationData4: null,
+      number: 0,
+      title: null,
+      titleDetails: null,
+      drawTime: 0,
+      userStatus: {},
+      restMsSHow: false,
+      restMsg: null,
+      code: null,
+      user_id: null,
+      animationData1: null,
+
+    }
+    computed = {
+    }
+  loadQrcode() {
+    const vm = this;
+    return new Promise((resolve, reject) => {
+      if (vm.miniappQrcode) {
+        resolve(vm.miniappQrcode);
+      } else {
+        wepy.request({
+//              header: {'Client': this. headerClient},
+          url: this.server_host_localnews+'ugc/share/app-code',
+          data: {
+//                params: param,
+            params: 1,
+            url: 'pages/index',
+            uid:  vm.$parent.globalData.userInfo ? vm.$parent.globalData.userInfo.id : 0,
+            appid: 'wxebac0fc347d6f531',
+          },
+          method: 'get',
+        }).then((resp) => {
+          console.log('ugc/share/app-code  result', resp);
+          if (resp.data.code === 0) {
+            console.log('joojojojojojoi')
+            wepy.downloadFile({
+              url: resp.data.data.url,
+            }).then((res)=>{
+              console.log('fasafsdfaf');
+              if (res.tempFilePath) {
+                console.log(res.tempFilePath)
+                vm.miniappQrcode= res.tempFilePath
+                resolve(res.tempFilePath);
+              }
+            }).catch((error)=>{
+              console.log('10s超时处理')
+              console.log(error)
+              reject(error);
+            })
+//            wx.downloadFile({
+//              url: resp.data.data.url,
+//              success: function (res) {
+//                if (res.tempFilePath) {
+//                  console.log(res.tempFilePath)
+//                  vm.miniappQrcode= res.tempFilePath
+//                  resolve(res.tempFilePath);
+//                }
+//              },
+//              fail:function (error) {//10s超时处理
+//                console.log('10s超时处理')
+//                console.log(error)
+//                reject(error);
+//              }
+//            });
+          } else {
+//                reject(resp);
+          }
+          this.$apply();
+        });
+
+//            const code = app.globalData.userInfo && app.globalData.userInfo.invite_code ? app.globalData.userInfo.invite_code : ''
+//            const param = 'news_id=' + vm.data.newsId + '&s=1&c=' + code;
+        // const param = 'channel=kefu';
+
+      }
+    });
+  }
+  _drawImage(path = '') {
+    const vm = this;
+//    let content= '啊哈哈哈啊哈哈哈哈啊哈啊哈哈哈啊哈哈哈哈啊哈哈哈';
+    let content= this.titleDetails;
+    const ctx = wx.createCanvasContext('timeline-image')
+
+    // ===== 背景 ======
+    ctx.rect(0, 0, 225, 230);
+    ctx.setFillStyle('rgb(102,68,166)');
+    ctx.fill();
+    // =================
+    ctx.drawImage('../image/pic_victory.png', 15, 18, 195, 137);
+    ctx.setTextBaseline('top');
+    ctx.setFillStyle('#ffffff')
+    ctx.setFontSize(16)
+    let content1;
+    let content2;
+    let content3;
+    if(content.length>20 || content.length===20){
+      content1= content.substring(0,8);
+      content2 = content.substring(8,20)+'...';
+      ctx.fillText(content1, 15+16*content1.length/3, 145)
+      ctx.fillText(content2, 15, 165)
+    }else if(content.length<20 && content.length>12){
+      content1= content.substring(0,content.length-12);
+      content2 = content.substring(content.length-12)
+      ctx.fillText(content1, 15+16*content1.length/2.2, 145)
+      ctx.fillText(content2, 15, 165)
+    }else{
+      content1= content.substring(0);
+      ctx.fillText(content1, 15, 155)
+    }
+
+    ctx.setTextBaseline('top')
+    ctx.setFillStyle('rgb(248,231,250)')
+    ctx.setFontSize(14)
+    ctx.fillText('你的成绩为：', 60, 190)
+    ctx.setTextBaseline('top')
+    ctx.setFillStyle('rgb(243,232,194)')
+    ctx.setFontSize(14)
+    ctx.fillText(this.score+'分', 140, 190)
+    // ========== 封面图 ============
+    ctx.setFillStyle('#ffffff')
+    ctx.fillRect(0,220 , 225, 120);
+    ctx.drawImage(path, 55, 220, 120, 110)
+    ctx.draw()
+    // ========== 封面图 end ============
+  }
+
+
+
+    methods = {
+      goSelect() {
+        console.log('-------------->'+ this.user_code);
+        console.log('-------------->'+ this.user_id);
+        wx.navigateToMiniProgram({
+          appId: 'wxbe40f0285b55d0ec',
+          path: '/pages/select/select?user_id=' + this.user_id + '&user_code=' + this.user_code,
+          envVersion: 'trial'
+        })
+      },
+      noshare() {
+        this.restMsSHow = false;
+      },
+      _closeTimelineImage: function () {
+          this.showTimelineImage=false
+      },
+      _none() {
+
+      },
+      touchStart() {
+
+      },
+      touchMove() {
+      },
+      touchEnd() {
+      },
+      _saveImage() {
+        let h = 340;
+        const vm = this;
+        console.log(vm.$parent.globalData.pixelRatio)
+//        if (vm.data.imgs.length > 0) {
+//          h = 340;
+//        } else {
+//          h = 200;
+//        }
+        let destWidth = 225 * vm.$parent.globalData.pixelRatio * 3;
+        let destHeight = h * vm.$parent.globalData.pixelRatio * 3;
+        wx.canvasToTempFilePath({
+          x: 0,
+          y: 0,
+          width: 225,
+          height: h,
+          destWidth: destWidth,
+          destHeight: destHeight,
+          canvasId: 'timeline-image',
+          success: function (res) {
+            wx.saveImageToPhotosAlbum({
+              filePath: res.tempFilePath,
+              success(resp) {
+                vm.showTimelineImage=false;//取消分享框
+                vm.$apply();
+
+                wepy.request({
+                  header: {'Client': vm.headerClient},
+                  url: vm.baseURL + '/activity/user/share-question?access_token='+ vm.accessToken,
+                  data: {
+                    act_id: 1
+                  }
+                }).then((res) => {
+                  if (res.data.code === -1) {
+                    vm.restMsSHow = true;
+                    vm.restMsg = res.data.msg;
+                    vm.$apply();
+                  }else{
+                    vm.getUserStatus();
+                  }
+                });
+//                vm.popupShare = false;
+                vm.$apply();
+
+                wx.showToast({
+                  title: '保存成功',
+                  icon: 'success',
+                  duration: 2000
+                })
+              },
+              fail(err) {
+                console.log('失败')
+                console.log(err.errMsg)
+                if (err.errMsg === "saveImageToPhotosAlbum:fail auth deny") {
+                  wx.openSetting({
+                    success(settingdata) {
+                      console.log(settingdata)
+                      if (settingdata.authSetting["scope.writePhotosAlbum"]) {
+                        console.log('获取权限成功，给出再次点击图片保存到相册的提示。')
+//                        vm._showTimelineImage();
+                      } else {
+//                        vm.showTimelineImage=false;//取消分享框
+//                        vm.$apply();
+
+                        console.log('获取权限失败，给出不给权限就无法正常使用的提示')
+                      }
+                    }
+                  })
+                }
+              }
+            })
+          }
+        })
+      },
+      _showTimelineImage: function () {
+        const vm = this;
+        wx.showLoading({
+          title: '生成中'
+        });
+        this.loadQrcode().then(path => {
+          vm._drawImage(path);
+          vm.showTimelineImage= true;
+          vm.popupShare= false;
+          vm.$apply();
+          wx.hideLoading();
+        }, err => {
+//          vm._drawImage();
+          vm.showTimelineImage= false;
+          vm.popupShare= false;
+          vm.$apply();
+          wx.hideLoading();
+          wx.showToast({
+            title: '加载失败，请重试',
+            icon: 'fail',
+            duration: 500
+          })
+          console.error(err);
+        });
+      },
+
+
+
+      goBack() {
+        console.log(123);
+        wx.redirectTo({
+          url: '/pages/index'
+        })
+      },
+      backLook() {
+//        wxbe40f0285b55d0ec
+//        console.log(123)
+        wx.navigateToMiniProgram({
+          appId: 'wxbe40f0285b55d0ec',
+          path: "/zh_tcwq/pages/type/type?type_id=11&type_name=方言讨论区",
+          envVersion: 'trial'
+        })
+      },
+      //  -------------每次触发动画前清空状态--------------
+      animation1() {
+        this.setData({
+          animationData1: null
+        });
+        let animation = wx.createAnimation({
+          transformOrigin: "50% 50%",
+          duration: 100,
+          timingFunction: "linear",
+          delay: 0
+        });
+        animation.scale(1).step();
+        animation.scale(0.9).step();
+        animation.scale(1).step();
+        this.setData({
+          [this.$prefix + 'animationData1']: animation.export()
+        })
+      },
+
+      //触发分享按钮
+      toggleShare(){
+        this.popupShare = true;
+      },
+      popupShareWin: function () {
+        this.popupShare=!this.popupShare;
+      },
+    };
+    onLoad() {
+      wx.showLoading({
+        title: '正在加载'
+      });
+      var res = wx.getSystemInfoSync();
+      this.baseURL = this.$parent.globalData.baseURL;
+      this.server_host_localnews = this.$parent.globalData.server_host_localnews;
+      this.musice = wx.getStorageSync('musice');
+//      this.musiceRotate(this.musice);
+      this.dveWidth = res.windowWidth;
+      this.dveHeight = res.windowHeight;
+      this.score = wx.getStorageSync('score');
+      this.rigthNumber = wx.getStorageSync('guan');
+<<<<<<< HEAD
+      this.accessToken = wx.getStorageSync('access-token');
+      this.headerClient = "2500" + '/miniapp/wechat/1.0.0/' + "1";
+=======
+      this.accessToken = this.$parent.globalData.accessToken;
+      this. headerClient = "2500" + '/miniapp/wechat/1.0.0/' + "1";
+
+
+    }
+    onShow(){
+>>>>>>> 84887c1dc956f0b84b75a38237add06aecd67b34
+      this.getUserCode();
+
+      wepy.request({
+        header: {'Client': this. headerClient},
+        url: this.baseURL + '/activity/user/all-answer?act_id=1&access_token='+ this.accessToken,
+        method: 'POST',
+        header:{'content-type': 'application/json'},
+        data: {
+          index: this.rigthNumber
+        }
+      }).then((ans) => {
+        this.getUserStatus();
+        wepy.request({
+          header: {'Client': this. headerClient},
+          url: this.baseURL + '/activity/user/get-user-title?access_token='+ this.accessToken,
+          data: {
+            act_id: 1
+          }
+        }).then((res) => {
+          console.log(res);
+          this.title = res.data.res.title;
+          this.titleDetails = res.data.res.content;
+          this.loading = true;
+          wx.hideLoading();
+          this.$apply();
+        });
+      })
+    }
+    onUnload() {
+      var that = this;
+//      that.musiceRotate(true);
+      wx.pauseBackgroundAudio();
+      // wx.setStorageSync('musice',this.musice);
+    }
+//  --------------播放音乐---------------------------------
+    musiceClick() {
+        this.musice = !this.musice;
+        if (!this.musice){
+          let date = new Date();
+//          wx.playBackgroundAudio({
+//            dataUrl: 'https://heji.g2u7.cn/thinkphp/bgm_a.mp3'
+//          });
+//          this.musiceRotate();
+        }else{
+//          wx.pauseBackgroundAudio();
+//          this.musiceRotate(true);
+        }
+      }
+// -----------------音乐旋转动画----------------------
+    musiceRotate(state) {
+      console.log(state)
+      if(state){
+        clearInterval(this.setIntervalMusice);
+        return;
+      }
+      var that = this;
+      this.setIntervalMusice = setInterval(()=>{
+        this.setData({
+          animationData4: null
+        });
+        this.animation = wx.createAnimation({
+          transformOrigin: "50% 50%",
+          duration: 300,
+          timingFunction: "line",
+          delay: 0
+        });
+        that.number++;
+        this.animation.rotate(5*(that.number)).step();
+        this.animationData4 = this.animation.export();
+        this.$apply();
+      },100)
+    }
+// ------------------------分享弹框----------------------------
+    onShareAppMessage(res) {
+      var that = this;
+    return {
+      title: '我竟然没有看懂湖北的方言，谁懂快来帮帮我',
+      path: '/pages/index',
+      imageUrl: '../image/share_1024.jpg',
+      success: function(rese) {
+        wepy.request({
+          header: {'Client': that. headerClient},
+          url: that.baseURL + '/activity/user/share-question?access_token='+ that.accessToken,
+          data: {
+            act_id: 1
+          }
+        }).then((res) => {
+          if (res.data.code === -1) {
+                that.restMsSHow = true;
+                that.restMsg = res.data.msg;
+                that.$apply();
+            }else{
+              that.getUserStatus();
+              wx.showToast({
+                title: '成功',
+                icon: 'success',
+                duration: 500
+              })
+            }
+        });
+        that.popupShare = false;
+        that.$apply();
+      },
+      fail:function(error){
+        console.log(error)
+        that.popupShare = false;
+        that.$apply();
+      }
+    }
+  }
+  //  ---------------获取用户状态-------------------------------
+  getUserStatus() {
+      wepy.request({
+        header: {'Client': this. headerClient},
+        url: this.baseURL + '/activity/user/get-user-state?access_token='+ this.accessToken,
+        data: {
+          act_id: 1
+        }
+      }).then((res) => {
+        this.userStatus = res.data.res;
+        this.shareTime = res.data.res.timeLimit - res.data.res.usefulTime - res.data.res.usedTime;
+        this.$apply();
+      });
+    }
+    // 获取传给看点小程序的识别码
+    getUserCode() {
+      wepy.request({
+        header: {'Client': this. headerClient},
+        url: this.baseURL + '/activity/user/get-user-code?access_token='+ this.accessToken,
+        data: {
+          act_id: 1
+        }
+      }).then((res) => {
+        console.log(res.data);
+        this.user_code = res.data.res.code;
+        this.user_id = res.data.res.user_id;
+        this.$apply();
+      });
+    }
+}
+</script>
